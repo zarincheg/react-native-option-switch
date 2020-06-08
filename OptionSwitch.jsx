@@ -29,12 +29,7 @@ class OptionSwitch extends React.PureComponent {
 			alignItems: 'center',
 		},
 		selectedItem: {
-			width: 125,
-			height: 24,
-			borderRadius: 12,
-			marginHorizontal: 16,
 			backgroundColor: '#FDE08C',
-			alignItems: 'center',
 
 		},
 		label: {
@@ -65,7 +60,9 @@ class OptionSwitch extends React.PureComponent {
 		this.state.selectedOption = this.options.find((option) => option.isDefault).key || null;
 
 		if (props.styles) {
-			this.styles = {...this.styles, ...props.styles};
+			for (item in props.styles) {
+				Object.assign(this.styles[item], props.styles[item]);
+			}
 		}
 	}
 
@@ -97,9 +94,14 @@ class OptionSwitch extends React.PureComponent {
 		return options.map((option) => {
 			return (
 				<TouchableWithoutFeedback onPress={() => this.onChange(option)} key={option.key}>
-					<View style={option.key === this.state.selectedOption ? this.styles.selectedItem : this.styles.item}>
-						<Text style={this.styles.label}>{option.label}</Text>
-					</View>
+					<View style={[
+						this.styles.item,
+						this.props.styles?.item,
+						option.key === this.state.selectedOption && this.styles.selectedItem,
+						option.key === this.state.selectedOption && this.props.styles?.selectedItem,
+						]}>
+							<Text style={this.styles.label}>{option.label}</Text>
+						</View>
 				</TouchableWithoutFeedback>
 			);
 		});
