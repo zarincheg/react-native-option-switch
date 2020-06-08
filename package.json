@@ -1,6 +1,6 @@
 {
   "name": "react-native-option-switch",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Options switch component for React Native. It can be used as radio button or boolean switch. ",
   "main": "index.js",
   "scripts": {

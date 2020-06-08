@@ -6,7 +6,7 @@ class OptionSwitch extends React.PureComponent {
 	static propTypes = {
 		options: PropTypes.arrayOf(PropTypes.shape({
 			key: PropTypes.string,
-			title: PropTypes.string,
+			label: PropTypes.string,
 			value: PropTypes.any,
 			isDefault: PropTypes.bool,
 		})).isRequired,
@@ -38,7 +38,7 @@ class OptionSwitch extends React.PureComponent {
 			alignItems: 'center',
 
 		},
-		title: {
+		label: {
 			lineHeight: 24,
 			fontSize: 14,
 			fontFamily: 'Rubik-Regular',
@@ -104,7 +104,7 @@ class OptionSwitch extends React.PureComponent {
 			return (
 				<TouchableWithoutFeedback onPress={() => this.onChange(option)} key={option.key}>
 					<View style={option.key === this.state.selectedOption ? this.styles.selectedItem : this.styles.item}>
-						<Text style={this.styles.title}>{option.title}</Text>
+						<Text style={this.styles.label}>{option.label}</Text>
 					</View>
 				</TouchableWithoutFeedback>
 			);
