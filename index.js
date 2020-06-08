@@ -1,1 +1,1 @@
-export { default as OptionSwitch } from './OptionSwitch';
+export { default } from './OptionSwitch';

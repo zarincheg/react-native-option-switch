@@ -40,7 +40,6 @@ class OptionSwitch extends React.PureComponent {
 		label: {
 			lineHeight: 24,
 			fontSize: 14,
-			fontFamily: 'Rubik-Regular',
 			textTransform: 'uppercase',
 		},
 		container: {

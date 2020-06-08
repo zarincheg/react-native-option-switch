@@ -49,17 +49,14 @@ Demo:
 		}}
 		options={[
 			{
-				key: 'first',
-				title: 'First',
+				label: 'First',
 				value: 'first'
 			}, {
-				key: 'second',
-				title: 'Second',
+				label: 'Second',
 				value: 'second',
 				isDefault: true,
 			}, {
-				key: 'third',
-				title: 'Third',
+				label: 'Third',
 				value: 'third',
 			}
 		]}
@@ -72,16 +69,15 @@ Demo:
 		textAlign: 'center'
 	}}>Boolean choice</Text>
 	<OptionSwitch
-		isBool={true}
 		onChange={(value) => {
 
 		}}
 		options={[
 			{
-				title: 'Yes',
+				label: 'Yes',
 				value: false
 			}, {
-				title: 'No',
+				label: 'No',
 				value: true,
 				isDefault: true,
 			}
