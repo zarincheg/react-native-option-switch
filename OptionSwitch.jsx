@@ -12,7 +12,6 @@ class OptionSwitch extends React.PureComponent {
 		})).isRequired,
 		onChange: PropTypes.func,
 		styles: PropTypes.object,
-		isBool: PropTypes.bool,
 		isNullable: PropTypes.bool,
 	}
 
@@ -57,13 +56,11 @@ class OptionSwitch extends React.PureComponent {
 		this.state.selectedOption = props.default || null;
 		this.options = props.options;
 
-		if (props.isBool) {
-			this.options = this.options.map((option) => {
-				option.key = Math.random().toString(16).substring(2);
+		this.options = this.options.map((option) => {
+			option.key = Math.random().toString(16).substring(2);
 
-				return option;
-			});
-		}
+			return option;
+		});
 
 		this.state.value = this.options.find((option) => option.isDefault).value || null;
 		this.state.selectedOption = this.options.find((option) => option.isDefault).key || null;
@@ -97,8 +94,6 @@ class OptionSwitch extends React.PureComponent {
 		if (!options) {
 			return null;
 		}
-
-		console.log('Options', options);
 
 		return options.map((option) => {
 			return (
