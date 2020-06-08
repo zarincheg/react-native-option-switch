@@ -60,7 +60,7 @@ class OptionSwitch extends React.PureComponent {
 		this.state.selectedOption = this.options.find((option) => option.isDefault).key || null;
 
 		if (props.styles) {
-			for (item in props.styles) {
+			for (const item in props.styles) {
 				Object.assign(this.styles[item], props.styles[item]);
 			}
 		}
